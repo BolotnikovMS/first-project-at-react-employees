@@ -39,21 +39,21 @@
 }
 
 .list-group-item .fa-star {
-    width: 35px;
-    height: 35px;
-    text-align: center;
-    line-height: 35px;
-    font-size: 16px;
+    /*width: 35px;*/
+    /*height: 35px;*/
+    /*text-align: center;*/
+    /*line-height: 35px;*/
+    /*font-size: 16px;*/
     color: #FFD700;
-    transition: 0.3s all;
-    transform: translateX(30px);
-    opacity: 0;
+    /*transition: 0.3s all;*/
+    /*transform: translateX(30px);*/
+    /*opacity: 1;*/
 }
 
-.list-group-item.like .fa-star {
-    opacity: 1;
-    transform: translateX(0px);
-}
+/*.list-group-item.like .fa-star {*/
+/*    opacity: 1;*/
+/*    transform: translateX(0px);*/
+/*}*/
 
 .list-group-item.increase .list-group-item-label, .list-group-item.increase .list-group-item-input {
     color: #e09f3e;

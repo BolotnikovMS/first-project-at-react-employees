@@ -11,22 +11,31 @@ class EmployeesListItem extends Component {
     const {name, salary, onDelete, onToggleProp, increase, rise} = this.props
 
     let classNames = "list-group-item d-flex justify-content-between"
+    let classNamesStar = "far fa-star"
 
     if (increase) {
       classNames += ' increase'
     }
 
     if (rise) {
-      classNames += ' like'
+      classNamesStar = 'fas fa-star'
     }
 
     return (
       <li className={classNames}>
-        <span className="list-group-item-label like" onClick={onToggleProp} data-toggle="rise">{name}</span>
+        <span className="list-group-item-label like">{name}</span>
         <input type="text" className="list-group-item-input" defaultValue={salary + '$'} name="salary" onChange={this.onValueChange}/>
         <div className='d-flex justify-content-center align-items-center'>
           <button type="button"
-                  className="btn-cookie btn-sm " onClick={onToggleProp} data-toggle="increase">
+                  className="btn-cookie btn-sm "
+                  onClick={onToggleProp}
+                  data-toggle="rise">
+            <i className={classNamesStar}></i>
+          </button>
+          <button type="button"
+                  className="btn-cookie btn-sm "
+                  onClick={onToggleProp}
+                  data-toggle="increase">
             <i className="fas fa-cookie"></i>
           </button>
           <button type="button"
@@ -34,7 +43,6 @@ class EmployeesListItem extends Component {
                   onClick={onDelete}>
             <i className="fas fa-trash"></i>
           </button>
-          <i className="fas fa-star"></i>
         </div>
       </li>
     )
