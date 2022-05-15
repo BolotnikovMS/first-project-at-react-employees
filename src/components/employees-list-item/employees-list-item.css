@@ -14,10 +14,18 @@
     min-width: 550px;
 }
 
-.list-group-item input {
+.list-group-item-input {
     line-height: 35px;
     font-size: 20px;
     text-align: center;
+    border: 0;
+}
+
+.list-group-item-input-big {
+    line-height: 35px;
+    width: 600px;
+    font-size: 20px;
+    text-align: left;
     border: 0;
 }
 

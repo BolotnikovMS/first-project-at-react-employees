@@ -3,8 +3,16 @@ import {Component} from "react";
 import './employees-list-item.css'
 
 class EmployeesListItem extends Component {
-  onValueChange = (e) => {
+  onValueChangeSalary = (e) => {
     this.props.onChangeSalary(this.props.id, [e.target.name] = e.target.value.slice(0, e.target.value.length - 1))
+  }
+
+  onValueChangeName = (e) => {
+    this.props.onChangeEmployeeName(this.props.id, [e.target.name] = e.target.value)
+  }
+
+  onValueChange = (e) => {
+    this.props.onChangeValueEmployee(this.props.id, e.currentTarget.getAttribute('data-atr'), [e.target.name] = e.target.value)
   }
 
   render() {
@@ -23,8 +31,17 @@ class EmployeesListItem extends Component {
 
     return (
       <li className={classNames}>
-        <span className="list-group-item-label like">{name}</span>
-        <input type="text" className="list-group-item-input" defaultValue={salary + '$'} name="salary" onChange={this.onValueChange}/>
+        {/*<span className="list-group-item-label like">{name}</span>*/}
+        <input type="text" className="list-group-item-input-big"
+               defaultValue={name}
+               name="name"
+               data-atr="name"
+               onChange={this.onValueChange}/>
+        <input type="text" className="list-group-item-input"
+               defaultValue={salary + '$'}
+               name="salary"
+               data-atr="salary"
+               onChange={this.onValueChange}/>
         <div className='d-flex justify-content-center align-items-center'>
           <button type="button"
                   className="btn-cookie btn-sm "
